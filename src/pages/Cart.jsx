@@ -10,6 +10,7 @@ const Cart = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalPri
     return accumulator + currentValue
   }, 0)
 
+    
   const Dec = totalpD.reduce((accumulatord, currentValued) => {
     return accumulatord + currentValued
   }, 0);
