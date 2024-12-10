@@ -4,7 +4,7 @@ import Product from './pages/Product';
 import Footer from './components/Footer';
 import PageNotFound from './pages/PageNotFound';
 import Cart from './pages/Cart';
-import Navbar from './components/NavBar';
+import Navbar from './components/navBar';
 
 const App = () => {
   const [cartProducts, setcartProducts] = useState([]);
@@ -25,7 +25,7 @@ const App = () => {
               cartProducts={cartProducts} setcartProducts={setcartProducts} totalP={totalP} settotalP={settotalP} />
           } />
           <Route path='*' element={<PageNotFound />} />
-          <Route path='/cart' element={
+          <Route path='/Cart' element={
           <Cart cartCount={cartCount} totalPrice={totalPrice} totalP={totalP} 
           settotalP={settotalP} settotalPrice={settotalPrice} 
           setcartCount={setcartCount} cartProducts={cartProducts} 
