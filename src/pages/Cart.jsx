@@ -9,16 +9,12 @@ const Cart = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalPri
   const Sum = totalP.reduce((accumulator, currentValue) => {
     return accumulator + currentValue
   }, 0)
-
     
   const Dec = totalpD.reduce((accumulatord, currentValued) => {
     return accumulatord + currentValued
   }, 0);
 
-  cartCount === 0 ?
-    settotalPrice(0)
-    :
-    settotalPrice(Sum - Dec);
+  cartCount === 0 ?settotalPrice(0):settotalPrice(Sum - Dec);
 
   return (
     <>
@@ -69,7 +65,7 @@ const Cart = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalPri
                 <FaRupeeSign className="inline-block text-sm" />{cartCount >= 1 ? (totalPrice - (totalPrice * Discount)).toFixed(2) : 0}
               </td>
               <td className="px-6 py-4">
-                <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Total</a>
+                <span className="font-medium text-red-600 dark:text-red-500">Total</span>
               </td>
             </tr>
           </tbody>
