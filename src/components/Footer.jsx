@@ -16,7 +16,7 @@ const Footer = () => {
                 <Link to={"/"} className="hover:underline me-4 md:me-6">Home</Link>
               </li>
               <li>
-                <Link to={"/cart"} className="hover:underline">Cart</Link>
+                <Link to={"/Cart"} className="hover:underline">Cart</Link>
               </li>
             </ul>
           </div>

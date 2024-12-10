@@ -4,7 +4,7 @@ import Product from './pages/Product';
 import Footer from './components/Footer';
 import PageNotFound from './pages/PageNotFound';
 import Cart from './pages/Cart';
-import Navbar from './components/navBar';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [cartProducts, setcartProducts] = useState([]);
