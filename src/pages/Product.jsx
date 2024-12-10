@@ -1,31 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
-import { FaRupeeSign } from "react-icons/fa";
 import Card from '../components/Card';
 
 const Product = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalP, settotalP }) => {
     const [fetchDatas, setFetchdatas] = useState([]);
     useEffect(() => {
         const addPrice = () => {
-
             cartProducts.map((itemg) => {
-                cartCount === 0?
-                settotalP([]):
-                settotalP([...totalP, itemg.price]);
-               
+                cartCount === 0 ?
+                    settotalP([]) :
+                    settotalP([...totalP, itemg.price]);
             })
         }
         fetchData()
         addPrice()
     }, [cartProducts])
 
-
     const fetchData = async () => {
         await axios.get('https://fakestoreapi.com/products')
             .then(res => setFetchdatas(res.data))
             .catch(error => console.log(error))
-
     }
 
     return (

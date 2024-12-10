@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Total from '../components/Total';
 import { FaRupeeSign } from "react-icons/fa";
 
 const Cart = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalPrice, settotalPrice, totalP, settotalP, totalpD, settotalpD }) => {
-  // cartProducts.map((itemofCart) => {const bbb = itemofCart.price})
 
   const Discount = 10 / 100;
 
@@ -11,17 +10,14 @@ const Cart = ({ cartProducts, setcartProducts, cartCount, setcartCount, totalPri
     return accumulator + currentValue
   }, 0)
 
-
   const Dec = totalpD.reduce((accumulatord, currentValued) => {
     return accumulatord + currentValued
   }, 0);
 
-  //  console.log(`sum of array valuea: ${Sum}`)
-  //  console.log(`sum of array Dec value: ${Dec}`)
-cartCount === 0 ?
-  settotalPrice(0)
-:
-  settotalPrice(Sum - Dec);
+  cartCount === 0 ?
+    settotalPrice(0)
+    :
+    settotalPrice(Sum - Dec);
 
   return (
     <>
@@ -63,18 +59,14 @@ cartCount === 0 ?
             }
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
               <td className="p-4">
-
               </td>
               <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-
               </td>
               <td className="px-6 py-4">
-                {/* {console.log(`ptoduct total price: ${prodCounts*totalPrice}`)} */}
-
               </td>
               <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-              <FaRupeeSign className="inline-block text-sm"/>{cartCount>=1 ? (totalPrice - (totalPrice * Discount)).toFixed(2) : 0}
-          </td>
+                <FaRupeeSign className="inline-block text-sm" />{cartCount >= 1 ? (totalPrice - (totalPrice * Discount)).toFixed(2) : 0}
+              </td>
               <td className="px-6 py-4">
                 <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Total</a>
               </td>
